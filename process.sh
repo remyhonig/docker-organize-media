@@ -32,7 +32,7 @@ function process_image
     dt=$(extract_datetime_image $srcpath)
     dstdir="/dst/$(datetime_to_directory $dt)"
     dstpath="$dstdir/$(basename $srcpath)"
-    echo "mkdir -p $dstdir && mv $srcpath $dstpath"
+    echo "mkdir -p $dstdir && cp $srcpath $dstpath"
 }
 
 function process_movie
@@ -41,7 +41,7 @@ function process_movie
     dt=$(extract_datetime_movie $srcpath)
     dstdir="/dst/$(datetime_to_directory $dt)"
     dstpath="$dstdir/$(basename $srcpath)"
-    echo "mkdir -p $dstdir && mv $srcpath $dstpath"
+    echo "mkdir -p $dstdir && cp $srcpath $dstpath"
 }
 
 find . -type f -iname '*.jpg' |
