@@ -6,7 +6,7 @@ MAINTAINER Remy Honig
 ENV HOME /root
 
 # Use baseimage-docker's init system
-CMD ["/sbin/my_init"]
+CMD /sbin/my_init -- /process.sh
 
 # Volume
 VOLUME ["/src", "/dst"]
@@ -26,5 +26,5 @@ RUN apt-get install -y moreutils
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Run process as a one-shot script
-ADD process.sh /etc/my_init.d/01_process.sh
-RUN chmod +x /etc/my_init.d/01_process.sh
+ADD process.sh /process.sh
+RUN chmod +x /process.sh

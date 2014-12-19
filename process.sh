@@ -1,6 +1,6 @@
 #!/bin/bash
 cd /src
-echo "check for new files"
+echo "check for new files" | ts
 
 # 2014:09:19 17:34:50
 function extract_datetime_image
@@ -47,13 +47,13 @@ function process_movie
 find . -type f -iname '*.jpg' |
     while IFS=$'\n' read -r FILE; do
         cmd=$(process_image $FILE)
-        echo $cmd
+        echo $cmd | ts
         eval $cmd || echo "error processing: $FILE"
     done
 
 find . -type f \( -iname '*.mp4' -o -iname '*.mov' \) |
     while IFS=$'\n' read -r FILE; do
         cmd=$(process_movie $FILE)
-        echo $cmd
+        echo $cmd | ts
         eval $cmd || echo "error processing: $FILE"
     done
