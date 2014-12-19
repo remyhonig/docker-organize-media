@@ -5,13 +5,17 @@ docker build -rm -t rhonig/organizemedia .
 docker run -v $(pwd)/unsorted:/src -v $(pwd)/sorted:/dst -it rhonig/organizemedia
 #+END_SRC
 
+* Result
+
+The destination =/dst= directory will have the following directory structure.
+
 #+BEGIN_SRC sh :results value verbatim :exports both
 tree ~/sorted
 #+END_SRC
 
 #+RESULTS:
 #+begin_example
-/sorted
+~/sorted
 └── 2014
     ├── 07
     │   └── 17
