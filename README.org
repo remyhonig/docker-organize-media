@@ -1,0 +1,6 @@
+* Usage
+
+#+BEGIN_SRC sh
+docker build -rm -t rhonig/organizemedia .
+docker run -v $(pwd)/unsorted:/src -v $(pwd)/sorted:/dst -it rhonig/organizemedia
+#+END_SRC
