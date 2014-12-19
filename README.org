@@ -4,3 +4,37 @@
 docker build -rm -t rhonig/organizemedia .
 docker run -v $(pwd)/unsorted:/src -v $(pwd)/sorted:/dst -it rhonig/organizemedia
 #+END_SRC
+
+#+BEGIN_SRC sh :results value verbatim :exports both
+tree ~/sorted
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+/sorted
+└── 2014
+    ├── 07
+    │   └── 17
+    ├── 09
+    │   ├── 19
+    │   ├── 20
+    │   ├── 24
+    │   ├── 25
+    │   └── 27
+    ├── 10
+    │   ├── 09
+    │   ├── 25
+    │   ├── 26
+    │   ├── 29
+    │   └── 31
+    ├── 11
+    │   ├── 01
+    │   ├── 26
+    │   ├── 27
+    │   └── 30
+    └── 12
+        ├── 01
+        ├── 03
+        ├── 04
+        └── 14
+#+end_example
